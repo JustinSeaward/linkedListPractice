@@ -13,6 +13,7 @@ package DoubleLinkedList;
  */
 
 public class UndoRedoManager<T> {
+
     private class Node {
         private T state;
         private Node next;
@@ -21,6 +22,7 @@ public class UndoRedoManager<T> {
         private Node (T state){
             this.state = state;
         }
+
     }
 
     private Node currentState;
@@ -59,6 +61,20 @@ public class UndoRedoManager<T> {
 
     // Assignment: Implement the Redo method
 
+    public T Redo(){
+        if(currentState == null){
+            System.out.println("No state to redo");
+            return null;
+        }
+        Node nextState = currentState.next;
+        if(nextState == null){
+            System.out.println("Reached the end state.");
+        } else {
+            currentState = nextState;
+        }
+        return currentState.state;
+    }
+
 
     public static void main(String[] args){
         UndoRedoManager undoRedoManager = new UndoRedoManager();
@@ -67,6 +83,7 @@ public class UndoRedoManager<T> {
         undoRedoManager.addState("Take shower");
         undoRedoManager.addState("Go to class");
 
+        System.out.println("Undo");
         System.out.println("Current state: " + undoRedoManager.currentState.state);
         undoRedoManager.Undo();
         System.out.println("Current state: " + undoRedoManager.currentState.state);
@@ -75,6 +92,16 @@ public class UndoRedoManager<T> {
         undoRedoManager.Undo();
         System.out.println("Current state: " + undoRedoManager.currentState.state);
         undoRedoManager.Undo();
+        System.out.println("Current state: " + undoRedoManager.currentState.state + "\n");
+
+        System.out.println("Redo");
+        undoRedoManager.Redo();
+        System.out.println("Current state: " + undoRedoManager.currentState.state);
+        undoRedoManager.Redo();
+        System.out.println("Current state: " + undoRedoManager.currentState.state);
+        undoRedoManager.Redo();
+        System.out.println("Current state: " + undoRedoManager.currentState.state);
+        undoRedoManager.Redo();
         System.out.println("Current state: " + undoRedoManager.currentState.state);
     }
 }
