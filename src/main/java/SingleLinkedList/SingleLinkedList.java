@@ -63,10 +63,25 @@ public class SingleLinkedList {
         }
     }
 
-    //Search for an element in a linked list
-    //Delete method
 
     //EXERCISE 1: given a value, search for that element and return a boolean if the element exist or not.
+
+    public boolean searchForElement(int number){
+
+        if(head == null) {
+            System.out.println("Linked list dose not exist");
+        } else{
+            Node tempNode = head;
+            for(int i = 0; i < size; i++){
+                if(tempNode.value == number){
+                    return true;
+                }
+                tempNode = tempNode.next;
+            }
+        }
+        return false;
+    }
+
     //EXERCISE 2: Given a location Implement a Delete method.
 
 
