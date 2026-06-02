@@ -1,6 +1,4 @@
-package LinkedList;
-
-import DoubleLinkedList.DoubleLinkedList;
+package DoubleLinkedList;
 
 public class DoubleMain {
     public static void main(String[] args) {

@@ -1,6 +1,6 @@
 package SingleLinkedList;
 
-public class Main {
+public class SingleMain {
     public static void main(String[] args) {
 
         SingleLinkedList singleLinkedList = new SingleLinkedList();
@@ -10,7 +10,10 @@ public class Main {
         singleLinkedList.insertLinkedList(4,3);
 
         singleLinkedList.traverseLinkedList();
-//        LinkedList<String> test = new LinkedList<>();
+//      LinkedList<String> test = new LinkedList<>();
+
+        // put in a println to see the output
+        System.out.println(singleLinkedList.searchForElement(5));
 
     }
 }
