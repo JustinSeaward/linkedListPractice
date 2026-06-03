@@ -82,7 +82,36 @@ public class SingleLinkedList {
         return false;
     }
 
-    //EXERCISE 2: Given a location Implement a Delete method.
+    //EXERCISE 2: Given a location implement a delete method.
 
+    public void deleteElement(int location){
+        Node tempNode = head;
+
+        if(head == null){
+            System.out.println("Linked list dose not exist");
+        }
+        else if (location == 0) {
+            head = head.next;
+            size--;
+            if (head == null) {
+                tail = null;
+            }
+        }
+        else if (location >= size - 1){
+            for(int i = 0; i < size - 2; i++){
+                tempNode = tempNode.next;
+            }
+            tempNode.next = null;
+            tail = tempNode;
+            size--;
+        }
+        else {
+            for(int i = 0; i <= location - 2; i++){
+                tempNode = tempNode.next;
+            }
+            tempNode.next = tempNode.next.next;
+            size--;
+        }
+    }
 
 }
