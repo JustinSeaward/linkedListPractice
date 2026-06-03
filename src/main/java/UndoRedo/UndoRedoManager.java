@@ -75,7 +75,6 @@ public class UndoRedoManager<T> {
         return currentState.state;
     }
 
-
     public static void main(String[] args){
         UndoRedoManager undoRedoManager = new UndoRedoManager();
         undoRedoManager.addState("Wake up from bed");
