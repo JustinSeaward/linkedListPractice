@@ -9,5 +9,6 @@ public class DoubleMain {
         doubleLinkedList.insertLinkedList(4,3);
         doubleLinkedList.traverseLinkedList();
         doubleLinkedList.reverseTraverseLinkedList();
+
     }
 }
