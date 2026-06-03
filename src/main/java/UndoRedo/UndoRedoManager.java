@@ -1,4 +1,4 @@
-package DoubleLinkedList;
+package UndoRedo;
 
 /**
  * Implement an application that supports undo/redo functionality. User a linked list to maintain a sequence of states
