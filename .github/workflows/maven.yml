@@ -19,9 +19,12 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    permissions:
+      contents: write
+
     steps:
     - uses: actions/checkout@v4
-    - name: Set up JDK 20
+    - name: Set up JDK 24
       uses: actions/setup-java@v4
       with:
         java-version: '26'
